@@ -17,6 +17,7 @@ candidate_votes = {}
 winning_candidate = ""
 winning_count = 0
 winning_percentage = 0
+Largest_turnout_county = {}
 # Open the election results and read the file.
 with open(file_to_load) as election_data:
     file_reader = csv.reader(election_data)
@@ -31,6 +32,7 @@ with open(file_to_load) as election_data:
 
         #Print the candidate name from each row.
         candidate_name = row[2]
+        county_name = row[1]
 
         # If the candidate does not match any existingcandidate...
         if candidate_name not in candidate_options:
@@ -78,3 +80,5 @@ with open(file_to_save, "w") as txt_file:
     print(winning_candidate_summary)
     # Save the winning candidate's results to the text file.
     txt_file.write(winning_candidate_summary)
+    # This is the last line
+    
